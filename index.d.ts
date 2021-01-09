@@ -20,6 +20,7 @@ export interface ParallaxScrollViewProps {
     outputScaleValue?: number;
     style?: any;
     parallaxHeaderHeight?: number;
+    fixedHeaderHeight?: number;
 }
 
 export class RenderBackgroundParams {
