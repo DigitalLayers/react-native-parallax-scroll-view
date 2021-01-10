@@ -370,7 +370,7 @@ class ParallaxScrollView extends Component {
 					) : null}
 					{renderFixedHeader && (
 						<View style={{ position: "absolute", width: "100%" }}>
-							{changeHeaderVisibility && (
+							{changeHeaderVisibility == false && (
 								<Animated.View
 									style={{
 										backgroundColor: "white",
@@ -387,7 +387,7 @@ class ParallaxScrollView extends Component {
 									}}
 								></Animated.View>
 							)}
-							{changeHeaderVisibility && (
+							{changeHeaderVisibility == false && (
 								<Animated.View
 									style={{
 										backgroundColor: backgroundColor,
