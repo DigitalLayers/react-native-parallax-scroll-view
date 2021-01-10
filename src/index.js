@@ -381,10 +381,12 @@ class ParallaxScrollView extends Component {
 		fixedHeaderHeight
 	}) {
 		const { viewWidth } = this.state
-		const { scrollY, _changeHeaderVisibility } = this
+		const { scrollY } = this
 
+		console.log("_changeHeaderVisibility", this._changeHeaderVisibility);
 		if (renderStickyHeader || renderFixedHeader) {
 			const p = pivotPoint(parallaxHeaderHeight, stickyHeaderHeight)
+			const p1 = pivotPoint(parallaxHeaderHeight, fixedHeaderHeight)
 			return (
 				<View
 					style={[
@@ -428,7 +430,7 @@ class ParallaxScrollView extends Component {
 						renderFixedHeader &&
 						<View style={{ position: 'absolute', width: '100%' }}>
 							{
-								!_changeHeaderVisibility &&
+								this._changeHeaderVisibility &&
 								<Animated.View
 									style={{
 										backgroundColor: 'white',
@@ -441,12 +443,13 @@ class ParallaxScrollView extends Component {
 										zIndex: 1,
 										position: 'absolute',
 										top: 0,
-										width: '100%'
+										width: '100%',
+										
 									}}
 								></Animated.View>
 							}
 							{
-								!_changeHeaderVisibility &&
+								this._changeHeaderVisibility &&
 								<Animated.View
 									style={{
 										backgroundColor: backgroundColor,
@@ -459,7 +462,8 @@ class ParallaxScrollView extends Component {
 										zIndex: 12,
 										position: 'absolute',
 										top: 0,
-										width: '100%'
+										width: '100%',
+										
 									}}
 								></Animated.View>
 							}
